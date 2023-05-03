@@ -16,12 +16,14 @@ namespace Controle.Bar
             RepositorioConta repositoriConta = new RepositorioConta(new ArrayList());
             RepositorioFuncionario repositorioFuncionario = new RepositorioFuncionario(new ArrayList());
             RepositorioGarcom repositorioGarcom = new RepositorioGarcom(new ArrayList());
+
             TelaConta telaConta = new TelaConta(repositoriConta);
             TelaCliente telacliente = new TelaCliente(repositorioCliente);
             TelaFuncionario telaFuncionario = new TelaFuncionario(repositorioFuncionario);
             TelaGarcom telaGarcom = new TelaGarcom(repositorioGarcom);
 
             TelaPrincipal apresentarTelaPrincipal = new TelaPrincipal();
+
 
             while (true)
             {
@@ -44,7 +46,48 @@ namespace Controle.Bar
                        telaFuncionario.VisualizarRegistros(true);
                     continue;
                 }
+                if (opcao == "2")
+                {
+                    string opcaoGarcom = telacliente.ApresentarMenu();
+                    if (opcaoGarcom == "1")
+                        telacliente.InserirNovoRegistro();
+                    if (opcaoGarcom == "2")
+                        telacliente.EditarRegistro();
+                    if (opcaoGarcom == "3")
+                        telacliente.ExcluirRegistro();
+                    if (opcaoGarcom == "4") ;
+                       telacliente.VisualizarRegistros(true);
+                    continue;   
+                }
+                if(opcao == "3")
+                {
+                    string opcaoCliente = telacliente.ApresentarMenu();
+                    if (opcaoCliente == "1")
+                        telacliente.InserirNovoRegistro();
+                    if (opcaoCliente == "2")
+                        telacliente.EditarRegistro();
+                    if (opcaoCliente == "3")
+                        telacliente.ExcluirRegistro();
+                    if (opcaoCliente == "4") ;
+                    telacliente.VisualizarRegistros(true);
+                    continue;
+                }
+                if (opcao == "4") 
+                {
+                    string opcaoConta = telaConta.ApresentarMenu();
+                    if (opcaoConta == "1")
+                        telaConta.InserirNovoRegistro();
+                    if (opcaoConta == "2")
+                        telaConta.EditarRegistro();
+                    if (opcaoConta == "3")
+                        telaConta.ExcluirRegistro();
+                    if (opcaoConta == "4") ;
+                    telaConta.VisualizarRegistros(true);
+                    continue;
+                }
+
 
             }
+        }
     }
 }

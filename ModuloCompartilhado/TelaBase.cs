@@ -199,5 +199,10 @@ namespace Controle.Bar.ModuloCompartilhado
 
             return funcionario;
         }
+
+        public static implicit operator TelaBase(TelaPrincipal v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

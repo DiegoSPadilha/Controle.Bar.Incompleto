@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Controle.Bar.ModuloFuncionario
 {
@@ -33,7 +34,14 @@ namespace Controle.Bar.ModuloFuncionario
 
         public override ArrayList Validar()
         {
-            throw new NotImplementedException();
+            ArrayList erros = new ArrayList();
+            if (string.IsNullOrEmpty(Produto.Trim()))
+                erros.Add("O campo \"produto\" é obrigatório");
+            if (string.IsNullOrEmpty(mesa.Trim()))
+                erros.Add("O campo \"mesa\" é obrigatório");
+            if (string.IsNullOrEmpty(Garcom.Trim()))
+                erros.Add("O campo \"garcom\" é obrigatório");
+            return erros;
         }
     }
 }

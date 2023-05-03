@@ -13,7 +13,7 @@ namespace Controle.Bar
             throw new NotImplementedException();
         }
 
-        public string TelaPrincipal()
+        public string TelaBase()
         {
             Console.Clear();
 
